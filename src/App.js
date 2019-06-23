@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import { Storage } from 'aws-amplify';
 import { withAuthenticator } from 'aws-amplify-react'
@@ -34,7 +34,23 @@ async function readRootFromStorage() {
   console.log('Root: ', data)
 }
 
+async function addFile(e) {
+  console.log('Uploading...')
+  if (!e || !e.target || !e.target.files) return;
+  const file = e.target.files[0];
+  //await Storage.put(file.name, file);
+  await Storage.put('example.png', file);
+  console.log('image successfully stored!')
+}
+
 function App() {
+  const [imageUrl, updateImage] = useState('')
+
+  async function fetchImage() {
+    const imagePath = await Storage.get('example.png')
+    updateImage(imagePath)
+  }
+
   return (
     <div className="app">
       <div className="app-header">
@@ -52,6 +68,14 @@ function App() {
           <button onClick={readFolderFromStorage.bind(this, 'javascript')}>Read Folder</button>
           <button onClick={readFileFromStorage.bind(this, 'javascript/MyReactComponent.js')}>Read File</button>
           <button onClick={readRootFromStorage}>Read Root</button>
+        </div>
+        <div className="file-input-wrapper">
+          <button className="btn">Upload File</button>
+          <input type="file" accept='image' onChange={addFile}/>
+        </div>
+        <div>
+          <div className="img"><img src={imageUrl} alt="" /></div>
+          <button onClick={fetchImage}>Fetch Image</button>
         </div>
       </div>
     </div>

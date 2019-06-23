@@ -1,0 +1,68 @@
+{
+    "identityPoolName": "storageapp210395d7_identitypool_210395d7",
+    "allowUnauthenticatedIdentities": false,
+    "lambdaLogPolicy": "storag_210395d7_lambda_log_policy",
+    "openIdLambdaRoleName": "storag_210395d7_openid_lambda_role",
+    "openIdRolePolicy": "storag_210395d7_openid_pass_role_policy",
+    "openIdLambdaIAMPolicy": "storag_210395d7_openid_lambda_iam_policy",
+    "openIdLogPolicy": "storag_210395d7_openid_lambda_log_policy",
+    "userPoolName": "storageapp210395d7_userpool_210395d7",
+    "autoVerifiedAttributes": [
+        "email"
+    ],
+    "mfaConfiguration": "OFF",
+    "mfaTypes": [
+        "SMS Text Message"
+    ],
+    "roleName": "storag210395d7_sns-role",
+    "roleExternalId": "storag210395d7_role_external_id",
+    "policyName": "storag210395d7-sns-policy",
+    "smsAuthenticationMessage": "Your authentication code is {####}",
+    "smsVerificationMessage": "Your verification code is {####}",
+    "emailVerificationSubject": "Your verification code",
+    "emailVerificationMessage": "Your verification code is {####}",
+    "defaultPasswordPolicy": false,
+    "passwordPolicyMinLength": 8,
+    "passwordPolicyCharacters": [],
+    "requiredAttributes": [
+        "email"
+    ],
+    "userpoolClientName": "storag210395d7_app_client",
+    "userpoolClientGenerateSecret": true,
+    "userpoolClientRefreshTokenValidity": 30,
+    "userpoolClientWriteAttributes": [
+        "email"
+    ],
+    "userpoolClientReadAttributes": [
+        "email"
+    ],
+    "mfaLambdaRole": "storag210395d7_totp_lambda_role",
+    "mfaLambdaLogPolicy": "storag210395d7_totp_lambda_log_policy",
+    "mfaPassRolePolicy": "storag210395d7_totp_pass_role_policy",
+    "mfaLambdaIAMPolicy": "storag210395d7_totp_lambda_iam_policy",
+    "userpoolClientLambdaRole": "storag210395d7_userpoolclient_lambda_role",
+    "userpoolClientLogPolicy": "storag210395d7_userpoolclient_lambda_log_policy",
+    "userpoolClientLambdaPolicy": "storag210395d7_userpoolclient_lambda_iam_policy",
+    "userpoolClientSetAttributes": false,
+    "resourceName": "storageapp210395d7",
+    "authSelections": "identityPoolAndUserPool",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    },
+    "unauthRoleArn": {
+        "Fn::GetAtt": [
+            "UnauthRole",
+            "Arn"
+        ]
+    },
+    "useDefault": "default"
+}

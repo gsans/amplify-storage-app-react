@@ -1,0 +1,19 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "storage-app-dev-20190623153750-authRole",
+            "UnauthRoleArn": "arn:aws:iam::664371068953:role/storage-app-dev-20190623153750-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::664371068953:role/storage-app-dev-20190623153750-authRole",
+            "Region": "eu-central-1",
+            "DeploymentBucketName": "storage-app-dev-20190623153750-deployment",
+            "UnauthRoleName": "storage-app-dev-20190623153750-unauthRole",
+            "StackName": "storage-app-dev-20190623153750",
+            "StackId": "arn:aws:cloudformation:eu-central-1:664371068953:stack/storage-app-dev-20190623153750/a7419b10-95b3-11e9-9226-061d64a5b024"
+        },
+        "categories": {
+            "auth": {
+                "storageapp210395d7": {}
+            }
+        }
+    }
+}

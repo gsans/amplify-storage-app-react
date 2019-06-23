@@ -1,0 +1,14 @@
+{
+	"auth": {
+		"storageapp210395d7": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation"
+		}
+	},
+	"storage": {
+		"mybucket": {
+			"service": "S3",
+			"providerPlugin": "awscloudformation"
+		}
+	}
+}
